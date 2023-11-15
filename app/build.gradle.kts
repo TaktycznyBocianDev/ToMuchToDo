@@ -2,16 +2,17 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
     namespace = "com.example.to_much_todo"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.to_much_todo"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -67,5 +68,7 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-
+    implementation("androidx.activity:activity-ktx:1.4.0")
+    implementation ("com.google.dagger:hilt-android:2.48.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.48.1")
 }
