@@ -71,4 +71,6 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.4.0")
     implementation ("com.google.dagger:hilt-android:2.48.1")
     kapt("com.google.dagger:hilt-android-compiler:2.48.1")
+
+    implementation("androidx.navigation:navigation-compose:2.7.5")
 }
