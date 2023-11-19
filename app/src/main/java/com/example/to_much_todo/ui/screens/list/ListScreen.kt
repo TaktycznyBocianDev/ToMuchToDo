@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
 
 package com.example.to_much_todo.ui.screens.list
 
@@ -23,9 +23,12 @@ fun ListScreen(
 ){
 
     Scaffold(
+        topBar = {
+            ListAppBar()
+                 },
         content = {},
         floatingActionButton = {
-            ListFab(navigateToTaskScreen = navigateToTaskScreen)
+            ListFab(onFabClicked = navigateToTaskScreen)
         }
     )
 
@@ -34,12 +37,12 @@ fun ListScreen(
 @Composable
 fun ListFab(
 
-    navigateToTaskScreen: (Int) -> Unit
+    onFabClicked: (taskId: Int) -> Unit
 
 ){
     FloatingActionButton(
         onClick = {
-            navigateToTaskScreen(-1)
+            onFabClicked(-1)
         }
     ){
         Icon(imageVector = Icons.Filled.Add,
@@ -48,6 +51,7 @@ fun ListFab(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 @Preview
 private fun ListScreenPreview(){

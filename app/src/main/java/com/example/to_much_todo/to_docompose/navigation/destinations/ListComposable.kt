@@ -11,7 +11,7 @@ import com.example.to_much_todo.ui.theme.util.Constants.LIST_SCREEN
 
 @OptIn(ExperimentalMaterial3Api::class)
 fun NavGraphBuilder.listComposable(
-    navigateToTaskScreen: (Int) -> Unit
+    navigateToTaskScreen: (taskId: Int) -> Unit
 
 ){
     composable(
