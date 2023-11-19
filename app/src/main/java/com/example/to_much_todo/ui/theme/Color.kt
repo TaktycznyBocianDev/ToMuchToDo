@@ -30,4 +30,4 @@ get() = if(!isSystemInDarkTheme()) Color.White else LightGray
 
 val topAppBackgroundColor: Color
     @Composable
-    get() = if(!isSystemInDarkTheme()) Purple10 else Color.Black
+    get() = if(!isSystemInDarkTheme()) Purple40 else Color.Black
