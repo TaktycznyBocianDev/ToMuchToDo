@@ -97,13 +97,9 @@ fun SortAction(
             expanded = expanded,
             onDismissRequest = { expanded = false }
         ){
-           DropdownMenuItem(text = { /*TODO*/ },
-               onClick = { expanded = false})
-           PriorityItem(priority = Priority.LOW)
-            DropdownMenuItem(text = { /*TODO*/ }, onClick = { expanded = false })
-            PriorityItem(priority = Priority.HIGH)
-            DropdownMenuItem(text = { /*TODO*/ }, onClick = { expanded = false })
-            PriorityItem(priority = Priority.NONE)
+            DropdownMenuItem(text = { PriorityItem(priority = Priority.LOW)}, onClick = { expanded = false; onSortClicked(Priority.LOW)  })
+            DropdownMenuItem(text = { PriorityItem(priority = Priority.HIGH)}, onClick = { expanded = false; onSortClicked(Priority.HIGH) })
+            DropdownMenuItem(text = { PriorityItem(priority = Priority.NONE)}, onClick = { expanded = false; onSortClicked(Priority.NONE) })
             //22.ListScreen
         }
     }
