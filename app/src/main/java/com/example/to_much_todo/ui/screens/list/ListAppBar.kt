@@ -37,23 +37,39 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import com.example.to_much_todo.to_docompose.components.PriorityItem
-
+import com.example.to_much_todo.ui.theme.util.SearchAppBarState
+import com.example.to_much_todo.ui.viewmodels.SharedViewModel
 
 
 @Composable
-fun ListAppBar(){
-    //DefaultListAppBar(
-       // onSearchClicked = {},
-       // onSortClicked = {},
-       // onDeleteClicked = {}
-  //  )
-    SearchAppBar(
-        text = "",
-        onTextChange = {},
-        onCloseClicked = {},
-        onSearchClicked = {}
-    )
+fun ListAppBar(
+    sharedViewModel: SharedViewModel,
+    searchAppBarState: SearchAppBarState,
+    searchTextState: String
+){
+    when(searchAppBarState)
+    {
+        SearchAppBarState.CLOSED -> {DefaultListAppBar(
+                    onSearchClicked = {
+                                      sharedViewModel.searchAppBarState.value =
+                                      SearchAppBarState.OPENED
+                                      },
+                    onSortClicked = {},
+                    onDeleteClicked = {} ) }
+    else -> {
+            SearchAppBar(
+            text = searchTextState,
+            onTextChange = {newText ->
+                sharedViewModel.searchTextState.value  = newText},
+            onCloseClicked = { sharedViewModel.searchAppBarState.value =
+                SearchAppBarState.CLOSED
+                             sharedViewModel.searchTextState.value = ""},
+            onSearchClicked = {})
+         }
+    }
 }
+
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

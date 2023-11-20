@@ -8,10 +8,12 @@ import androidx.navigation.navArgument
 import com.example.to_much_todo.ui.screens.list.ListScreen
 import com.example.to_much_todo.ui.theme.util.Constants.LIST_ARGUMENT_KEY
 import com.example.to_much_todo.ui.theme.util.Constants.LIST_SCREEN
+import com.example.to_much_todo.ui.viewmodels.SharedViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 fun NavGraphBuilder.listComposable(
-    navigateToTaskScreen: (taskId: Int) -> Unit
+    navigateToTaskScreen: (taskId: Int) -> Unit,
+    sharedViewModel: SharedViewModel
 
 ){
     composable(
@@ -21,7 +23,9 @@ fun NavGraphBuilder.listComposable(
         })
     ){
 
-        ListScreen(navigateToTaskScreen = navigateToTaskScreen)
+        ListScreen(
+            navigateToTaskScreen = navigateToTaskScreen,
+            sharedViewModel = sharedViewModel)
 
     }
 }
