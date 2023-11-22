@@ -20,7 +20,7 @@ class SharedViewModel @Inject constructor(
 ): ViewModel() {
 
     val searchAppBarState: MutableState<SearchAppBarState> =
-        mutableStateOf(SearchAppBarState.CLOSED)
+        mutableStateOf(SearchAppBarState.OPENED)
 
     val searchTextState: MutableState<String> = mutableStateOf("")
 

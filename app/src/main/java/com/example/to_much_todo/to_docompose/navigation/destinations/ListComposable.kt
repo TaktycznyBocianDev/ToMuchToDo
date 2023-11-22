@@ -12,7 +12,7 @@ import com.example.to_much_todo.ui.viewmodels.SharedViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 fun NavGraphBuilder.listComposable(
-    navigateToTaskScreen: (taskId: Int) -> Unit,
+    onFabClicked: (taskId: Int) -> Unit,
     sharedViewModel: SharedViewModel
 
 ){
@@ -24,7 +24,7 @@ fun NavGraphBuilder.listComposable(
     ){
 
         ListScreen(
-            navigateToTaskScreen = navigateToTaskScreen,
+            onFabClicked = onFabClicked,
             sharedViewModel = sharedViewModel)
 
     }
