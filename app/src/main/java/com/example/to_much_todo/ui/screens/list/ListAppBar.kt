@@ -109,6 +109,7 @@ fun SortAction(
             DropdownMenuItem(text = { PriorityItem(priority = Priority.LOW)}, onClick = { expanded = false; onSortClicked(Priority.LOW)  })
             DropdownMenuItem(text = { PriorityItem(priority = Priority.HIGH)}, onClick = { expanded = false; onSortClicked(Priority.HIGH) })
             DropdownMenuItem(text = { PriorityItem(priority = Priority.NONE)}, onClick = { expanded = false; onSortClicked(Priority.NONE) })
+            //22.ListScreen
         }
     }
 }
@@ -133,12 +134,7 @@ fun DeleteAllAction(
             onDismissRequest = { expanded = false }
         ){
             DropdownMenuItem(
-                text = {
-                    Text(
-                        text = "Delete all",
-                        color = Color.Black
-                    )
-                },
+                text = {"Delete all"},
                 modifier = Modifier.padding(16.dp),
                 onClick = {onDeleteClicked(); expanded = false})
         }
