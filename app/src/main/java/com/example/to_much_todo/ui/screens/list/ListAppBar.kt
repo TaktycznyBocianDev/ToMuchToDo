@@ -49,7 +49,8 @@ fun ListAppBar(
 ){
     when(searchAppBarState)
     {
-        SearchAppBarState.CLOSED -> {DefaultListAppBar(
+        SearchAppBarState.CLOSED->
+                    {DefaultListAppBar(
                     onSearchClicked = {
                                       sharedViewModel.searchAppBarState.value =
                                       SearchAppBarState.OPENED
@@ -90,7 +91,7 @@ fun DefaultListAppBar(
                 onDeleteClicked = onDeleteClicked
                 )
         },
-        colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = topAppBackgroundColor) //21
+        colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = topAppBackgroundColor)
 
     )
 }
